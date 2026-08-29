@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElitePay</title>
+    
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/akalanka929-eng/pay-summary-repo/main/Def%2006.ico">
+    
+    <style>
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            height: 100%; 
+            width: 100%;
+            background-color: #121212; 
+            overflow: hidden; 
+            font-family: Arial, sans-serif;
+        }
+
+        /* Splash Screen */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #121212;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+
+        /* වෘත්තාකාර රාමුව */
+        .circle-frame {
+            width: 80vw; /* තිරයේ පළල අනුව වෙනස් වේ */
+            height: 80vw;
+            max-width: 900px; /* උපරිම විශාලත්වය */
+            max-height: 900px;
+            border-radius: 50%; 
+            overflow: hidden;   
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #1e1e2f; 
+            box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.25); 
+            border: 4px solid rgba(255, 255, 255, 0.2); 
+        }
+
+        .circle-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+        }
+
+        /* Web App Container */
+        #app-container {
+            width: 100%;
+            height: 100vh;
+            display: none; 
+        }
+
+        iframe { 
+            width: 100%; 
+            height: 100%; 
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="splash-screen">
+        <!-- මෙහි circle-frame div එක එකතු කරන ලදී -->
+        <div class="circle-frame">
+            <img src="https://raw.githubusercontent.com/akalanka929-eng/iresha-akalanka/main/SL%20Gif%202.gif" alt="Loading Logo">
+        </div>
+    </div>
+
+    <div id="app-container">
+        <iframe src="https://script.google.com/macros/s/AKfycbzX5C1Oyl1h36nhYTXiWof25RjaOzZY3KitOeHD9KaHep8uEt5izWyNlAzBKIH0iK4k/exec"></iframe>
+    </div>
+
+    <script>
+        // තත්පර 3කට පසු Splash screen එක ඉවත් කිරීම
+        setTimeout(function() {
+            var splash = document.getElementById('splash-screen');
+            var app = document.getElementById('app-container');
+
+            splash.style.opacity = '0';
+
+            setTimeout(function() {
+                splash.style.display = 'none';
+                app.style.display = 'block';
+            }, 500); 
+
+        }, 6000); // ඔබට අවශ්‍ය කාලය මෙතැනින් වෙනස් කරන්න (3000ms = තත්පර 3)
+    </script>
+
+</body>
+</html>
